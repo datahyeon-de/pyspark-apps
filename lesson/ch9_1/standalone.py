@@ -12,7 +12,6 @@ df = spark.createDataFrame(data=[(1, 'Korea', 120),
                                  (3, 'Japan', 40)],
                            schema=schema
                            )
-df.show()
 print(df.count())
 
 time.sleep(300)
