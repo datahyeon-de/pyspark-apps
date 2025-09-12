@@ -13,7 +13,6 @@ df = spark.createDataFrame(data=[(1, 'Korea', 120),
                            schema=schema
                            )
 df.show()
-print('=============')
-df.count()
+print(df.count())
 
 time.sleep(300)
