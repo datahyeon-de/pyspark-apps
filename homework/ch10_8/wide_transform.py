@@ -11,7 +11,7 @@ spark_conf = {
 
 spark = SparkSession \
     .builder \
-    .appName("wide_transform.py") .getOrCreate() \
+    .appName("wide_transform.py") \
     .config(map= spark_conf) \
     .getOrCreate()
 
