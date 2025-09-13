@@ -1,3 +1,5 @@
+import time
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 
@@ -29,3 +31,5 @@ postings_df.persist()
 postings_df.show()
 postings_df.rdd.getNumPartitions()
 postings_df.count()
+
+time.sleep(600)
