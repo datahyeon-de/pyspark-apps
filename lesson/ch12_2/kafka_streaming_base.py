@@ -10,6 +10,11 @@ kafka_read_option = {
 
 kafka_source_df = spark.readStream.format('kafka').options(**kafka_read_option).load()
 
+kafka_source_df = kafka_source_df.selectExpr(
+    "CAST(key AS STRING) AS KEY",
+    "CAST(value AS STRING) AS VALUE",
+)
+
 kafka_write_option = {
     'checkpointLocation': f'/home/spark/kafka_offsets/{app_name}',
     'truncate': 'false'
