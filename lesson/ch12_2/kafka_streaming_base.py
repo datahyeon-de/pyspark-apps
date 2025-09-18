@@ -4,7 +4,7 @@ app_name = 'kafka_streaming_base'
 spark = SparkSession.builder.appName(app_name).getOrCreate()
 
 kafka_read_option = {
-    'bootstrap.servers': "kafka01:9092,kafka02:9092,kafka03:9092",
+    'kafka.bootstrap.servers': "kafka01:9092,kafka02:9092,kafka03:9092",
     'subscribe': 'lesson.spark-streaming.test',
 }
 
