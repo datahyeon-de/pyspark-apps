@@ -8,13 +8,13 @@ kafka_read_option = {
     'subscribe': 'lesson.spark-streaming.test',
 }
 
-kafka_source_df = spark.readStream.format('kafka').option(**kafka_read_option).load()
+kafka_source_df = spark.readStream.format('kafka').options(**kafka_read_option).load()
 
 kafka_write_option = {
     'checkpointLocation': f'/home/spark/kafka_offsets/{app_name}',
     'truncate': 'false'
 }
 
-query = kafka_source_df.writeStream.format('console').option(**kafka_write_option).start()
+query = kafka_source_df.writeStream.format('console').options(**kafka_write_option).start()
 
 query.awaitTermination()
